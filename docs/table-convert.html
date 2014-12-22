@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../zingchart-html5-min.js"></script>
+	<script src="../zingchart.jquery.js"></script>
+	<script src="../zingify/zingify.jquery.js"></script>
+	<!-- <style type="text/css">
+		code {
+			background-color: #FFFFCC;
+		}
+	</style>-->
+</head>
+<body>
+	<h1>ZingChart jQuery Table-to-Chart Plugin</h1>
+	
+	<h2>Basic Info</h2>
+	<p>This plugin takes the data from an HTML table and converts renders it in a ZingChart. It allows the user to submit JSON data along with the table
+	when rendering, or to pull data from HTML5 custom data attributes.</p>
+	
+	<em>note: the JS code snippets below are assumed to be within a jQuery <code>$(document).ready()</code> block</em>
+	
+	<h2>Configuration</h2>
+	<ul>Using the plugin requires you include the following scripts:
+		<li>jQuery (ex: <code>&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"&gt;&lt;/script&gt;</code>)</li>
+		<li>the ZingChart core library scripts (ex: <code>&lt;script src="zingchart/html5_scripts/zingchart-html5-min.js"&gt;&lt;/script&gt;</code>)</li>
+		<li>the ZingChart jQuery plugin, which this plugin utilizes (ex: <code>&lt;script src="zingchart.jquery.js"&gt;&lt;/script&gt;</code>)</li>
+		<li>the script for this plugin, zingify.jquery.js (ex: <code>&lt;script src="zingify.jquery.js"&gt;&lt;/script&gt;</code>)</li>
+	</ul>
+	
+	<h2>Basic usage</h2>
+	<p>Converts a (well-formed) HTML table into a ZingChart rendering. For an example of the most basic usage:</p>
+	<p>A table in the HTML that looks like this:</p>
+	<table id="ex_1">
+		<caption>Sales</caption>
+		<thead>
+			<tr>
+				<th>month</th>
+				<th>apples</th>
+				<th>oranges</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Jan</td>
+				<td>42</td>
+				<td>48</td>
+			</tr>
+			<tr>
+				<td>Feb</td>
+				<td>37</td>
+				<td>52</td>
+			</tr>
+			<tr>
+				<td>Mar</td>
+				<td>48</td>
+				<td>59</td>
+			</tr>
+			<tr>
+				<td>April</td>
+				<td>36</td>
+				<td>61</td>
+			</tr>
+			<tr>
+				<td>May</td>
+				<td>35</td>
+				<td>38</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<p>When zingified as follows:</p>
+	
+	<pre>$('table#myTable').zingify();</pre>
+	
+	<p>Will render this chart:</p>
+
+	<div id="ex_1_chart"></div>
+
+
+	<br><br><br>
+	<!-- data-zc='{ "type": "line", "title": { "text": "Quantity Sold" }, "scale-y": { "label": { "text": "quantity" } } }' -->
+	<!-- <table data-zc-type="line" data-zc-title_text="Quantity Sold" data-zc-scale-y_label_text="quantity" id="ex_2"> -->
+	<table data-zc-type="line" data-zc-title_text="Quantity Sold" data-zc-scale-y_label_text="quantity" id="ex_2">
+		<thead>
+			<tr>
+				<th>month</th>
+				<th>vacuum cleaners</th>
+				<th>senators</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Jan</td>
+				<td>43</td>
+				<td>32</td>
+			</tr>
+			<tr>
+				<td>Feb</td>
+				<td>21</td>
+				<td>33</td>
+			</tr>
+			<tr>
+				<td>Mar</td>
+				<td>12</td>
+				<td>42</td>
+			</tr>
+			<tr>
+				<td>April</td>
+				<td>19</td>
+				<td>55</td>
+			</tr>
+			<tr>
+				<td>May</td>
+				<td>34</td>
+				<td>38</td>
+			</tr>
+			<tr>
+				<td>June</td>
+				<td>40</td>
+				<td>32</td>
+			</tr>
+			<tr>
+				<td>July</td>
+				<td>42</td>
+				<td>35</td>
+			</tr>
+			<tr>
+				<td>Aug</td>
+				<td>42</td>
+				<td>37</td>
+			</tr>
+			<tr>
+				<td>Sep</td>
+				<td>38</td>
+				<td>48</td>
+			</tr>
+			<tr>
+				<td>Oct</td>
+				<td>38</td>
+				<td>55</td>
+			</tr>
+			<tr>
+				<td>Nov</td>
+				<td>32</td>
+				<td>59</td>
+			</tr>
+			<tr>
+				<td>Dec</td>
+				<td>38</td>
+				<td>55</td>
+			</tr>			
+		</tbody>
+	</table>
+
+	<div id="ex_2_chart"></div>
+
+
+	<script>
+		$(document).ready( function() {
+			$('#ex_1').zingify({
+				target: 'ex_1_chart',
+				data: {
+					"type": "line"
+				}
+			});
+			$('#ex_2').zingify({
+				target: 'ex_2_chart',
+				// data: { 
+				// 	"type": "line", 
+				// 	"title": { 
+				// 		"text": "Quantity Sold" 
+				// 	}, 
+				// 	"scale-y": {
+				// 		"label": {
+				// 			"text": "quantity" 
+				// 		}
+				// 	} 
+				// }
+			});
+		});
+	</script>
+	
+</body>
+</html>
