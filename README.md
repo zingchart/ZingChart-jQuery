@@ -118,6 +118,14 @@ Examples
 
 	---
 
+5. [**Table to Chart**: Using the Zingify Tool](http://jsfiddle.net/zingchart/n1w18kp8/)
+
+	Take your well-formed HTML tables and turn them into snazzy charts with ease. [Edit in JSFiddle](http://jsfiddle.net/zingchart/n1w18kp8/)
+
+	[![Zingify Demo](../docs/zingify-demo.png)](http://jsfiddle.net/zingchart/n1w18kp8/)
+
+	---
+
 Questions?
 ----------
 
