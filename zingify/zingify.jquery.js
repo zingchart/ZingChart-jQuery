@@ -45,7 +45,7 @@
 			}
 			
 			// 
-			$(target).width( options.hasOwnProperty('width') ? options.width : '500px' );
+			$(target).width( options.hasOwnProperty('width') ? options.width : '100%' );
 			$(target).height( options.hasOwnProperty('height') ? options.height : '500px' );
 
 			// Each chart needs a UNIQUE identifier
