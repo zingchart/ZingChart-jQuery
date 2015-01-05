@@ -22,7 +22,21 @@ Basics
 ------
 Step One is to make sure you have [jQuery loaded](http://jquery.com/download/). This wrapper won't work without it.
 
-The ZingChart jQuery wrapper works just like normal jQuery. Each method or event is tacked on to the standard jQuery selector method. All methods should be placed inside a ``` $(document).ready() ``` call to ensure the DOM is fully loaded. Here's an example of creating a ZingChart object on a div with an ID of "$("#myChart")":
+Step Two is to have the ZingChart library loaded. We suggest you use our [new, fandangled CDN](http://cdn.zingchart.com/) to keep up to date with the latest build.
+
+Step Three is to have this library loaded. Again, in order to stay up to date with the latest build, we suggest using [our CDN](http://cdn.zingchart.com/).
+
+Here's what should be in the ```<head>``` once you're done.
+
+```html
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="cdn.zingchart.com/zingchart-html5-min.js"></script>
+<script src="cdn.zingchart.com/zingchart.jquery.min.js"></script>
+```
+
+All good? Time to make some sweet charts.
+
+The ZingChart jQuery wrapper works just like normal jQuery. Each method or event is tacked on to the standard jQuery selector method. All methods should be placed inside a ``` $(document).ready() ``` call to ensure the DOM is fully loaded. Here's an example of creating a ZingChart object on a div with an ID of "myChart":
 
 ```javascript
 $(document).ready(function() {
