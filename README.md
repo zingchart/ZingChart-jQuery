@@ -1,5 +1,7 @@
 # ZingChart jQuery #
 #### Less code. More win. ####
+
+[![Join the chat at https://gitter.im/zingchart/ZingChart-jQuery](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/zingchart/ZingChart-jQuery?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 <br>
 ZingChart jQuery is a wrapper for the [ZingChart charting library](http://www.zingchart.com/) that allows for jQuery-style use of the [**88** different API methods](#methods) and [**81** different API events](#events) that ZingChart has to offer. It's designed to allow maximum use of the various features with the simplest and most jQuery-esque syntax possible.
 
