@@ -2,10 +2,12 @@
 1 verbose cli [ 'node', '/usr/local/bin/npm', 'version', 'patch' ]
 2 info using npm@1.4.23
 3 info using node@v0.10.31
-4 error Error: Git working directory not clean.
-4 error M bower.json
-4 error     at /usr/local/lib/node_modules/npm/lib/version.js:91:33
-4 error     at ChildProcess.exithandler (child_process.js:646:7)
+4 error Error: Command failed: The following paths are ignored by one of your .gitignore files:
+4 error package.json
+4 error Use -f if you really want to add them.
+4 error fatal: no files added
+4 error
+4 error     at ChildProcess.exithandler (child_process.js:648:15)
 4 error     at ChildProcess.emit (events.js:98:17)
 4 error     at maybeClose (child_process.js:756:16)
 4 error     at Socket.<anonymous> (child_process.js:969:11)
@@ -19,4 +21,5 @@
 8 error cwd /Users/prodee/Documents/ZingChart/ZingChart-jQuery-LIVE/ZingChart-jQuery
 9 error node -v v0.10.31
 10 error npm -v 1.4.23
-11 verbose exit [ 1, true ]
+11 error code 128
+12 verbose exit [ 1, true ]
