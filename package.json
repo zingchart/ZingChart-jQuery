@@ -1,6 +1,6 @@
 {
   "name": "zingchart-jquery",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Build fast and powerful charts with ZingChart and jQuery",
   "main": "zingchart.jquery.min.js",
   "directories": {
