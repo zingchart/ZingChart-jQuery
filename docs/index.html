@@ -3,14 +3,14 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="../zingchart-html5-min.js"></script>
+	<script src="../zingchart.min.js"></script>
 	<script src="../zingchart.jquery.js"></script>
 	
 
 	<script>
 		$(document).ready( function() {
-			// example one
-			var data = {
+			// example one data
+			var ex1 = {
 				"type": "bar",
 				"legend":{},
 				"series": [
@@ -28,6 +28,12 @@
 					},
 				]
 			};
+            // render example one
+            $('#ex_1').zingchart({
+                data:ex1
+            });
+
+
 
 			// example two
 			var ex2_Data = {
@@ -964,10 +970,6 @@
 		you've just created to manipulate it later, e.g.:</p>
 	<pre>var myChart = $('#myDiv').zingchart({ data: data });</pre>
 
-
-
-
-
 	<h1>Example 2: Executing functions on the ZingChart jQuery object</h1>
 	<p>Once you've created a zingchart object, you can execute function on it in regular jQuery fashion.</p>
 	<pre>
@@ -1006,46 +1008,7 @@
 	</pre>
 	<button id="ex_3_button">change to area and reset title</button>
 	<div id="ex_3" class="zingchart"></div>
-	     
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	<div id='one'></div>
 	<div id='two'></div>

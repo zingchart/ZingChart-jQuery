@@ -143,6 +143,10 @@
 			});
 			return this;
 		}
+		else if (typeof(intr) == "object") {
+			zingchart.exec(this[0].id, "setinterval", intr);
+			return this;
+		}
 		else {
 			throw("Error: Got " + typeof(intr) + ", expected number");
 		}
@@ -218,6 +222,10 @@
 		return zingchart.exec(this[0].id, "getrules", opts);
 	};
 
+	$.fn.getScales = function (opts) {
+		return zingchart.exec(this[0].id, "getscales", opts);
+	};
+
 	$.fn.getVersion = function () {
 		return zingchart.exec(this[0].id, "getversion");
 	};
@@ -246,7 +254,7 @@
 		return this;
 	};
 
-	$.fn.load = function (opts) {
+	$.fn.loadNewData = function (opts) {
 		zingchart.exec(this[0].id, "load", opts);
 		return this;
 	};
@@ -1104,7 +1112,19 @@
 	};
 
 	$.fn.nodeHover = function (mouseover, mouseout) {
-		$(this).nodeMouseOver(mouseover).nodeMouseOut(mouseout);
+		var jq = this;
+		var NODEMOUSEOVER = false;
+		zingchart.bind(this[0].id, "node_mouseover", function(p){
+			if (!NODEMOUSEOVER) {
+				$.extend(jq,{event:p});
+				NODEMOUSEOVER = true;
+				mouseover.call(jq);
+			}
+		});
+		zingchart.bind(jq[0].id, "node_mouseout", function(){
+			NODEMOUSEOVER = false;
+			mouseout.call(jq);
+		});
 		return this;
 	};
 

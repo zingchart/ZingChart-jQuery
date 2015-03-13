@@ -795,7 +795,7 @@ $("#myChart").destroy();
 ```
 
 <br>
-#### .load( string ) ####
+#### .loadNewData( string ) ####
 Loads a new JSON packet from a URL.
 
 Value | Type | Details
@@ -804,7 +804,7 @@ Parameter | String | 'newjson.php', 'somedata.php', etc.
 Return | jQuery | [jQuery Object](http://api.jquery.com/Types/#jQuery)
 
 ```javascript
-$("#myChart").load("awholenewdata.php");
+$("#myChart").loadNewData("awholenewdata.php");
 ```
 
 <br>
