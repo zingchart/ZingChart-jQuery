@@ -1459,40 +1459,60 @@
 	$.fn.drawTrendline = function (opts) {
 		var myId = this[0].id;
 		calculate.call(this,0);
+
 		function calculate(pindex) {
 			var nodes = $(this).getSeriesValues({
 				plotindex:pindex
 			});
-			var sxy = 0, sx = 0, sy = 0, sx2 = 0, l = 0;
 			var oScaleInfo = $(this).getObjectInfo({
 				object : 'scale',
 				name : 'scale-x'
 			});
+      			var scaleY = $(this).getObjectInfo({
+				object:'scale',
+				name: 'scale-y'
+			});
+
+			var logScale = (scaleY.progression === "log");
+			var log = Math.log;
 			var aScaleValues = oScaleInfo.values;
+			var node, x, y;
+			var sxy = 0, sx = 0, sy = 0, sx2 = 0, l = 0;
 			for (var i=0;i<nodes.length;i++) {
-				if (nodes[i][1] != undefined && typeof(nodes[i][1]) == 'number') {
-					sxy += nodes[i][0]*nodes[i][1];
-					sx += nodes[i][0];
-					sy += nodes[i][1];
-					sx2 += nodes[i][0]*nodes[i][0];
-					l++;
+				node = nodes[i];
+				if (node[1] != undefined && typeof(node[1]) == 'number') {
+					x = node[0];
+					y = node[1];
 				}
 				else {
-					sxy += nodes[i]*aScaleValues[i];
-					sx += aScaleValues[i];
-					sy += nodes[i];
-					sx2 += Math.pow(aScaleValues[i],2);
-					l++;
+					x = aScaleValues[i];
+					y = node;
 				}
+
+				if (logScale) {
+					y = log(y);
+				}
+
+				sxy += x*y;
+				sx += x;
+				sy += y;
+				sx2 += x*x;
+				l++;
 			}
+
 			var b = (l * sxy - sx * sy) / (l * sx2 - sx * sx);
 			var a = (sy - b * sx) / l;
-			var oScaleInfo = $(this).getObjectInfo({
-				object : 'scale',
-				name : 'scale-x'
-			});
-			var aScaleValues = oScaleInfo.values, fScaleMin = aScaleValues[0], fScaleMax = aScaleValues[aScaleValues.length-1];
-			var aRange = [a + b*fScaleMin, a + b*fScaleMax];
+			var aScaleValues = oScaleInfo.values,
+			fScaleMin = aScaleValues[0],
+			fScaleMax = aScaleValues[aScaleValues.length-1];
+			var aRange;
+			
+			aRange = [a + b*fScaleMin, a + b*fScaleMax];
+			if (logScale) {
+				aRange[0] = Math.exp(aRange[0]);
+				aRange[1] = Math.exp(aRange[1]);
+			}
+
 			var trendline = {
 				type : 'line',
 				lineColor : '#c00',
@@ -1507,10 +1527,6 @@
 				$.extend(trendline,opts);
 			}
 			trendline.range = aRange;
-			var scaleY = $(this).getObjectInfo({
-				object:'scale',
-				name: 'scale-y'
-			});
 			var markers = scaleY.markers;
 			if (markers) {
 				markers.push(trendline);
