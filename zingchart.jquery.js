@@ -1489,15 +1489,17 @@
 					y = node;
 				}
 
-				if (logScale) {
-					y = log(y);
+				if (typeof x === "number" && isFinite(x) && typeof y === "number" && isFinite(y)) {
+					if (logScale) {
+						y = log(y);
+					}
+	
+					sxy += x*y;
+					sx += x;
+					sy += y;
+					sx2 += x*x;
+					l++;
 				}
-
-				sxy += x*y;
-				sx += x;
-				sy += y;
-				sx2 += x*x;
-				l++;
 			}
 
 			var b = (l * sxy - sx * sy) / (l * sx2 - sx * sx);
