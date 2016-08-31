@@ -23,8 +23,8 @@
 		 *	} 
 		 */
 		function convertToChart(i, options) {
-			console.log("convertToChart:");
-			console.log("\toptions =", JSON.stringify(options));
+			//console.log("convertToChart:");
+			//console.log("\toptions =", JSON.stringify(options));
 
 			var target = undefined;
 			if ( options.target !== undefined) {
@@ -38,7 +38,7 @@
 				target.attr('id', options.target);
 			}
 
-			console.log("\ttarget =", target);
+			//console.log("\ttarget =", target);
 			
 			if (options.hideTable === true) {
 				$(this).hide();
@@ -51,7 +51,7 @@
 			// Each chart needs a UNIQUE identifier
 			var zingchartID = options.target + '_zc_chart';
 			if (i > 0) zingchartID += i;
-			console.log('zingchartID =', zingchartID);
+			//console.log('zingchartID =', zingchartID);
 			$(target).attr('id', zingchartID);
 			
 			var data = {};
@@ -107,7 +107,7 @@
 				var jsonString = $(this).attr('data-zc') || $(this).attr('data-zingchart');
 				attributes = JSON.parse(jsonString);
 			} catch (err) {
-				console.log(err);
+				//console.log(err);
 				attributes = {};
 			}
 
