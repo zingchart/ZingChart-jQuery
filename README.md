@@ -229,11 +229,11 @@ Appends data to the end of a plot. Can be used on a single plot or the whole ser
 
 Values | Type | Details
 --- | --- | ---
-Parameter | Object | [Series Object](http://www.zingchart.com/docs/api/api-methods/#zingchart__exec__api__appendseriesdata)
+Parameter | Object | [Series Object](http://www.zingchart.com/docs/api/api-methods/#zingchart__exec__api__appendseriesvalues)
 Return | jQuery | [jQuery Object](http://api.jquery.com/Types/#jQuery)
 
 ```javascript
-$("#myChart").appendSeriesData({
+$("#myChart").appendSeriesValues({
 	"plotindex": 1,
 	"values": [19,28,13,42]
 });
