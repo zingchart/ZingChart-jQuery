@@ -1712,18 +1712,6 @@ $("#myChart").toggleLegend();
 ```
 
 <br>
-#### .toggleLens() ####
-Toggle the visibility of the lens.
-
-Value | Type | Details
---- | --- | ---
-Return | jQuery | [jQuery Object](http://api.jquery.com/Types/#jQuery)
-
-```javascript
-$("#myChart").toggleLens();
-```
-
-<br>
 #### .toggleSource() ####
 Toggle the visibility of the View Source Screen.
 
@@ -3052,36 +3040,6 @@ Return | [jQuery](http://api.jquery.com/Types/#jQuery)
 
 ```javascript
 $("#myChart").dimensionChange(function(){
-	// Make some magic
-});
-```
-
-<br>
-#### .lensShow( callback )
-Fires the callback when the lens is shown.
-
-Value | Type | Details
---- | --- | ---
-Parameter | [Callback](https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/js-ctypes_reference/Callbacks)
-Return | [jQuery](http://api.jquery.com/Types/#jQuery)
-
-```javascript
-$("#myChart").lensShow(function(){
-	// Make some magic
-});
-```
-
-<br>
-#### .lensHide( callback )
-Fires the callback when the lens is hidden.
-
-Value | Type | Details
---- | --- | ---
-Parameter | [Callback](https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/js-ctypes_reference/Callbacks)
-Return | [jQuery](http://api.jquery.com/Types/#jQuery)
-
-```javascript
-$("#myChart").lensHide(function(){
 	// Make some magic
 });
 ```

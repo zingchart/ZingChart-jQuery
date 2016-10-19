@@ -933,8 +933,13 @@
 			*/
 
 			// example three
-			$('#ex_3').zingchart({data:data});
-			$('#ex_3_button').click( function() {
+			$('#ex_3').zingchart({data: {
+                    type: 'line',
+                    series: [{values: [1,2,3,4,5,6,7]}]
+                }
+            });
+			$('#ex_3_button').click( function(e) {
+                $('#ex_3').setType( 'area').setTitle( 'new title' );
 			});
 		});
 	</script>
@@ -1003,7 +1008,7 @@
 		var myChart = $('#myDiv').zingchart( { data: data } );
 
 		$('#button').click( function() {
-			myChart.setData( { type: 'area' } ).title( 'new title' );
+			myChart.setType('area').setTitle( 'new title' );
 		});
 	</pre>
 	<button id="ex_3_button">change to area and reset title</button>

@@ -1,5 +1,5 @@
 /* View the README.md for detailed documentation. */
-/* Version 1.0.1 | Last Updated 22 Dec. 2014 */
+/* Version 2.0.0 | Last Updated 19 Oct. 2016 */
 
 (function ( $ ) {
 
@@ -11,7 +11,9 @@
 	$.fn.zingchart = function (options) {
 		var id = this[0].id;
 		var defaults = {
-			id: id
+			id: id,
+			height: '100%',
+			width: '100%'
 		};
 		$.extend(defaults, options);
 		zingchart.render(defaults);
@@ -703,11 +705,6 @@
 		return this;
 	};
 
-	$.fn.toggleLens = function () {
-		zingchart.exec(this[0].id, "togglelens");
-		return this;
-	};
-
 	$.fn.toggleSource = function () {
 		zingchart.exec(this[0].id, "togglesource");
 		return this;
@@ -756,7 +753,7 @@
 	// ANIMATION EVENTS ====================================================
 	$.fn.animationEnd = function (callback) {
 		var jq = this;
-		zingchart.bind(this[0].id, "animationEnd", function(p){
+		zingchart.bind(this[0].id, "animation_end", function(p){
 			$.extend(jq,{event:p});
 			callback.call(jq)
 		});
@@ -1315,24 +1312,6 @@
 	$.fn.dimensionChange = function (callback) {
 		var jq = this;
 		zingchart.bind(this[0].id, "dimension_change", function(p){
-			$.extend(jq,{event:p});
-			callback.call(jq)
-		});
-		return this;
-	};
-
-	$.fn.lensShow = function (callback) {
-		var jq = this;
-		zingchart.bind(this[0].id, "lens_show", function(p){
-			$.extend(jq,{event:p});
-			callback.call(jq)
-		});
-		return this;
-	};
-
-	$.fn.lensHide = function (callback) {
-		var jq = this;
-		zingchart.bind(this[0].id, "lens_hide", function(p){
 			$.extend(jq,{event:p});
 			callback.call(jq)
 		});
