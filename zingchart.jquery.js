@@ -1449,7 +1449,7 @@
 			});
 			var aScaleValues = oScaleInfo.values;
 			for (var i=0;i<nodes.length;i++) {
-				if (nodes[i][1] != undefined && typeof(nodes[i][1]) == 'number') {
+				if (nodes[i] && nodes[i][1] != undefined && typeof(nodes[i][1]) == 'number') {
 					sxy += nodes[i][0]*nodes[i][1];
 					sx += nodes[i][0];
 					sy += nodes[i][1];
