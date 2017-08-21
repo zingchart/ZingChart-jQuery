@@ -480,7 +480,7 @@
 	};
 
 	// TOGGLE METHODS =========================================================
-	$.fn.disable = function (message) {
+	$.fn.disableChart = function (message) {
 		if (message) {
 			zingchart.exec(this[0].id, "disable", {text: message});
 		}
@@ -490,7 +490,7 @@
 		return this;
 	};
 
-	$.fn.enable = function () {
+	$.fn.enableChart = function () {
 		zingchart.exec(this[0].id, "enable");
 		return this;
 	};
@@ -1082,7 +1082,7 @@
 		});
 		return this;
 	};
-	
+
 	$.fn.nodeMouseOver = function (callback) {
 		var jq = this;
 		var NODEMOUSEOVER = false;

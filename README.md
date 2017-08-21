@@ -424,7 +424,7 @@ Exports the current data for the chart. This only works if the **exportdataurl**
 
 Values | Type | Details
 --- | --- | ---
-Parameter |  | 
+Parameter |  |
 Return | jQuery | [jQuery Object](http://api.jquery.com/Types/#jQuery)
 
 ```javascript
@@ -459,7 +459,7 @@ Creates a printable version of the chart and attempts to print it.
 
 Values | Type | Details
 --- | --- | ---
-Parameter |  | 
+Parameter |  |
 Return | jQuery | [jQuery Object](http://api.jquery.com/Types/#jQuery)
 
 ```javascript
@@ -473,7 +473,7 @@ Produces an image of the graph. This will only work if the **exportimageurl** is
 
 Values | Type | Details
 --- | --- | ---
-Parameter |  | 
+Parameter |  |
 Return | jQuery | [jQuery Object](http://api.jquery.com/Types/#jQuery)
 
 ```javascript
@@ -488,7 +488,7 @@ Clears the current chart and starts the feed anew.
 
 Values | Type | Details
 --- | --- | ---
-Parameter |  | 
+Parameter |  |
 Return | jQuery | [jQuery Object](http://api.jquery.com/Types/#jQuery)
 
 ```javascript
@@ -501,7 +501,7 @@ Returns the current interval value set on the feed.
 
 Values | Type | Details
 --- | --- | ---
-Parameter |  | 
+Parameter |  |
 Return | Number | Seconds (1,2,..) or Miliseconds (100,200,...)
 
 ```javascript
@@ -528,7 +528,7 @@ Starts the data feed of the chart.
 
 Values | Type | Details
 --- | --- | ---
-Parameter |  | 
+Parameter |  |
 Return | jQuery | [jQuery Object](http://api.jquery.com/Types/#jQuery)
 
 ```javascript
@@ -541,7 +541,7 @@ Stops the data feed of the chart.
 
 Values | Type | Details
 --- | --- | ---
-Parameter |  | 
+Parameter |  |
 Return | jQuery | [jQuery Object](http://api.jquery.com/Types/#jQuery)
 
 ```javascript
@@ -574,7 +574,7 @@ Returns the entire JSON for the chart. All of it. Every single nugget of info.
 
 Values | Type | Details
 --- | --- | ---
-Parameter |  | 
+Parameter |  |
 Return | Object | [Chart Data Object](http://www.zingchart.com/docs/api/api-methods/#zingchart__exec__api__getdata)
 
 <br>
@@ -885,7 +885,7 @@ $("#myChart").resize({
 	"height": 400
 });
 
-// Wha-Bam! Your chart is now 600px wide and 400px tall. 
+// Wha-Bam! Your chart is now 600px wide and 400px tall.
 ```
 
 <br>
@@ -1150,7 +1150,7 @@ $("#myChart").addObject({
 
 <br>
 #### .removeObject( object ) ####
-Removes one or more objects (labels or shapes) from the chart. 
+Removes one or more objects (labels or shapes) from the chart.
 Adds one or more objects (labels or shapes) on the chart. Single objects are passed through with to the **id** attribute. Multiple objects are passed through as an array of objects to the **id** attribute.
 
 Value | Type | Details
@@ -1435,7 +1435,7 @@ $("#myChart").setSelection({
 
 <br>
 ## Toggle ##
-#### .disable( string)  ####
+#### .disableChart( string)  ####
 Disable makes the chart inactive for user interactions. This is useful in the case of time-consuming operations. An optional string can be passed through that will be displayed as a message on top of the disabled chart.
 
 Value | Type | Details
@@ -1444,13 +1444,13 @@ Parameter | String (optional) | [Disable Message](http://www.zingchart.com/docs/
 Return | jQuery | [jQuery Object](http://api.jquery.com/Types/#jQuery)
 
 ```javascript
-$("#myChart").disable("Waiting on the world to change...");
+$("#myChart").disableChart("Waiting on the world to change...");
 
 // Disclaimer: you don't have to use John Mayer lyrics in your disable message but no one would fault you if you did.
 ```
 
 <br>
-#### .enable() ####
+#### .enableChart() ####
 Enables a chart for user interactions, turning off the disabled attribute.
 
 Value | Type | Details
@@ -1459,7 +1459,7 @@ Parameter | |
 Return | jQuery | [jQuery Object](http://api.jquery.com/Types/#jQuery)
 
 ```javascript
-$("#myChart").enable();
+$("#myChart").enableChart();
 ```
 <br>
 #### .fullscreen() ####
@@ -1790,7 +1790,7 @@ $("#myChart").zoomTo({
 });
 
 // The chart will now be zoomed in to show
-// values 10 through 30 on the x-scale and 
+// values 10 through 30 on the x-scale and
 // values 12 through 17 on the y scale.
 ```
 
@@ -1812,7 +1812,7 @@ $("#myChart").zoomToValues({
 });
 
 // The chart will now be zoomed in to show
-// values "Feb" through "Apr" on the x-scale 
+// values "Feb" through "Apr" on the x-scale
 // and values 200 through 300 on the y scale.
 ```
 
