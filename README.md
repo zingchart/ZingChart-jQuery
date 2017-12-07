@@ -29,7 +29,7 @@ Step Three is to have this library loaded. Again, in order to stay up to date wi
 Here's what should be in the ```<head>``` once you're done.
 
 ```html
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="cdn.zingchart.com/zingchart.min.js"></script>
 <script src="cdn.zingchart.com/zingchart.jquery.min.js"></script>
 ```
